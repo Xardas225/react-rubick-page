@@ -15,46 +15,7 @@
   background: url(./img/rubick.jpg)  170px 0/cover no-repeat;  
 }
 
-.header {
-  grid-area: h;
-  width: 100%;
-  background-color: greenyellow;
-}
 
-.header img {
-  width: 250px;
-  height: 120px;
 
-}
 
-.nav {
-  grid-area: n;
-  font-size: 30px;
-  background-color: snow ;
-  min-height: 200px;
-  max-height: 400px;
-}
 
-.nav div {
-  padding: 10px 0px 10px 25px;
-}
-
-.content {
-  grid-area: c;
-  /* background-color: blue; */
-}
-
-a {
-  text-decoration: none;
-  color: forestgreen;
-}
-
-a:hover {
-  position: relative;
-  bottom: 5px;
-  color: aquamarine;
-}
-
-/* a:before {
-  background-image: url(./img/rubick.jpg);
-} */

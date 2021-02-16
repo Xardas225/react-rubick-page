@@ -7,10 +7,8 @@ import s from './Myposts.module.css';
 
 const Myposts = (props) => {
 
-
-
     let PostsElements = 
-    props.Posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount} />);
+    props.state.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount} />);
 
 
     return (

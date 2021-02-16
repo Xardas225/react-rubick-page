@@ -24,4 +24,8 @@
 a.active {
   color: aquamarine;
 }
+
+.friends {
+  grid-area: n;
+}
   

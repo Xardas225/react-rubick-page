@@ -27,5 +27,7 @@ a.active {
 
 .friends {
   grid-area: n;
+  padding: 10px 0px 10px 25px;
+  font-size: 30px;
 }
   

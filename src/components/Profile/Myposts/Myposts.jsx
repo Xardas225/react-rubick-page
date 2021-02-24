@@ -14,13 +14,15 @@ const Myposts = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value
-        alert(text)
+        props.addPost(text)
     }
+
+    
 
     return (
         <div classname={s.postBlock}>
             <h2>My posts</h2>
-            <div className="addpost">
+            <div className={s.addPost}>
             <textarea ref={newPostElement}></textarea><br/>
             <button onClick={ addPost } >Add post</button>
             </div>

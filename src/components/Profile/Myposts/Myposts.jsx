@@ -3,25 +3,22 @@ import Post from '../Post/Post';
 import s from './Myposts.module.css';
 
 
-const Myposts = (props) => {
+let postData = [
+    {id: 1, message: "Hi, how are you?", likesCount: 7},
+    {id: 1, message: "Its nice", likesCount: 5 },
+]
 
-    let PostsData = [
-        {id:1 , message: "Hi? how are u?", likesCount: `likes: 11` },
-        {id:2 , message: "My first post! It's nice", likesCount: `likes: 12`},
-        {id:3 , message: "Today I'm learn method map", likesCount:  `likes: 8` }
-    ]
+let posts = postData.map( el => <Post message={el.message} likesCount={el.likesCount} /> )
 
-    let PostsElements = PostsData.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount} />);
-
-
+const Myposts = () => {
     return (
-        <div classname={s.postBlock}>
-            <h2>My posts</h2>
+        <div classname={s.item}>
+            My posts
             <div className="addpost">
             <textarea></textarea><br/>
             <button>Add post</button>
             </div>
-                {PostsElements}
+            {posts}
         </div>
     )
 }

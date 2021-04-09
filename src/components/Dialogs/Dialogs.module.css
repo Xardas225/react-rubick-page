@@ -5,9 +5,11 @@
     
 }
 
-.dialogsItems { 
-    grid-column-start: 1;
+.dialogsItems {
     padding: 10px;
+}
+
+.dialog {
     margin-top: 5px;
     padding: 15px;
     border: 5px solid green;
@@ -27,5 +29,5 @@
 }
 
 .message {
-    
+
 }

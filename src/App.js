@@ -10,15 +10,25 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 
 
-const App = () => {
+
+
+
+
+const App = (props) => {
 	return (
+		// Оборачиваем все в BrowserRouter для маршрутизации приложения 
 		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header />
-				<Navbar />
+				<Navbar state={props.state.navBar} />
 				<div className="app-wrapper-content">
-					<Route path='/profile' component={Profile} />
-					<Route path='/dialogs' component={Dialogs} />
+					{/* Route не передает компоненте URL , а только следит за тем,
+					 какой URL ей передали и отрисовывает ее в случае совпадения */}
+					
+					<Route path='/profile' render = { () =>
+						 <Profile state={props.state.profilePage} /> } />
+					<Route path='/dialogs' render = { () =>
+						 <Dialogs state={props.state.dialogsPage} />} />
 					<Route path='/news' component={News} />
 					<Route path='/music' component={Music} />
 					<Route path='/settings' component={Settings} />
@@ -29,7 +39,9 @@ const App = () => {
 }
 
 
-
+// У Route есть 2 значения для передачи компоненты : 
+// render и component , render - передает , рендерит функцию; component - передает отдельную компоненту
+// Чтобы прокинуть props через App используем render  
 
 
 

@@ -13,10 +13,13 @@ const Profile = (props) => {
              Name: Rubick
              Age: many years
         </div>
-        <Myposts posts={props.state.posts} />
+        <Myposts newPostText={props.state.newPostText} 
+                 posts={props.state.posts}
+                 updateNewPostText={props.updateNewPostText}
+                 addPost={props.addPost} />
 		</div>
     )
 }
-
+ 
 
 export default Profile;

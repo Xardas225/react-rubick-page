@@ -10,10 +10,6 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 
 
-
-
-
-
 const App = (props) => {
 	return (
 		// Оборачиваем все в BrowserRouter для маршрутизации приложения 
@@ -26,7 +22,9 @@ const App = (props) => {
 					 какой URL ей передали и отрисовывает ее в случае совпадения */}
 					
 					<Route path='/profile' render = { () =>
-						 <Profile state={props.state.profilePage} /> } />
+						 <Profile state={props.state.profilePage}
+						  updateNewPostText={props.updateNewPostText}
+						  addPost={props.addPost} /> } />
 					<Route path='/dialogs' render = { () =>
 						 <Dialogs state={props.state.dialogsPage} />} />
 					<Route path='/news' component={News} />

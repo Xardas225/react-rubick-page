@@ -18,8 +18,6 @@ const Myposts = (props) => {
     let addPost = () => {
         // Функция добавления поста на стену ( лежит в state ) 
         props.addPost()
-        // Зануление textarea через state( BLL )
-        props.updateNewPostText('')
     }   
     
     // Зануление textarea  

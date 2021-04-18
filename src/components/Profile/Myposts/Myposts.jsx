@@ -17,7 +17,8 @@ const Myposts = (props) => {
     // Функция кнопки onClick
     let addPost = () => {
         // Функция добавления поста на стену ( лежит в state ) 
-        props.addPost()
+        // props.addPost()
+        props.dispatch( {type: 'ADD-POST'} )
     }   
     
     // Зануление textarea  
@@ -28,7 +29,8 @@ const Myposts = (props) => {
     // FLUX-концепция( круговорот элементов, при  изменении каждый элемент приходит из state )
     let onPostChange = () => {
         let text = newPostElement.current.value
-        props.updateNewPostText(text)
+        // 
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text,})
     }
 
 

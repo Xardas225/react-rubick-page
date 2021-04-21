@@ -1,6 +1,9 @@
 import React from 'react';
+import { addPostCreator, updateNewPostTextCreator } from '../../../redux/state';
 import Post from '../Post/Post';
 import s from './Myposts.module.css';
+
+
 
 
 const Myposts = (props) => {
@@ -12,27 +15,19 @@ const Myposts = (props) => {
     
     // Создаём реф 
     let newPostElement = React.createRef() 
-
-
     // Функция кнопки onClick
     let addPost = () => {
         // Функция добавления поста на стену ( лежит в state ) 
         // props.addPost()
-        props.dispatch( {type: 'ADD-POST'} )
+        props.dispatch( addPostCreator() )
     }   
-    
-    // Зануление textarea  
-    // newPostElement.current.value = ''
-
-
     // Функция textarea к onChange( по завершении изменения элементов )
     // FLUX-концепция( круговорот элементов, при  изменении каждый элемент приходит из state )
     let onPostChange = () => {
         let text = newPostElement.current.value
-        // 
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text,})
+        // props.updateNewPostText()
+        props.dispatch( updateNewPostTextCreator(text))
     }
-
 
     
     return (
